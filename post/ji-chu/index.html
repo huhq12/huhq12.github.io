@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>基础 | hhq&#39;s note</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://huhq12.github.io//favicon.ico?v=1685431870436">
+<link rel="stylesheet" href="https://huhq12.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="1234
+
+1 数据类型
+1.1 基本的内置类型
+
+
+
+类型
+关键字
+
+
+
+
+布尔型
+bool
+
+
+字符型
+char
+
+
+整型
+int
+
+
+浮点型
+float
+
+
+双浮点型
+double
+
+
+无类型
+void
+
+
+宽字符型
+wchar_t
+..." />
+    <meta name="keywords" content="C++" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://huhq12.github.io/">
+        <img src="https://huhq12.github.io//images/avatar.png?v=1685431870436" class="site-logo">
+        <h1 class="site-title">hhq&#39;s note</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://huhq12.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">基础</h2>
+            <div class="post-date">2023-05-30</div>
+            
+              <div class="feature-container" style="background-image: url('https://huhq12.github.io//post-images/ji-chu.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>1234</p>
+<!-- more -->
+<h1 id="1-数据类型">1 数据类型</h1>
+<h2 id="11-基本的内置类型">1.1 基本的内置类型</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">关键字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">布尔型</td>
+<td style="text-align:left">bool</td>
+</tr>
+<tr>
+<td style="text-align:left">字符型</td>
+<td style="text-align:left">char</td>
+</tr>
+<tr>
+<td style="text-align:left">整型</td>
+<td style="text-align:left">int</td>
+</tr>
+<tr>
+<td style="text-align:left">浮点型</td>
+<td style="text-align:left">float</td>
+</tr>
+<tr>
+<td style="text-align:left">双浮点型</td>
+<td style="text-align:left">double</td>
+</tr>
+<tr>
+<td style="text-align:left">无类型</td>
+<td style="text-align:left">void</td>
+</tr>
+<tr>
+<td style="text-align:left">宽字符型</td>
+<td style="text-align:left">wchar_t</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12-typedef-声明">1.2 typedef 声明</h2>
+<p>为一个已有的类型取一个新的名字</p>
+<pre><code class="language-cpp">// 例如，下面的语句会告诉编译器，feet 是 int 的另一个名称：
+typedef int feet;
+// 现在，下面的声明是完全合法的，它创建了一个整型变量 distance：
+feet distance;
+</code></pre>
+<p>一些说明：</p>
+<ul>
+<li>typedef 可以声明各种类型名，但不能用来定义变量。用 typedef 可以声明数组类型、字符串类型，使用比较方便。</li>
+<li>用typedef只是对已经存在的类型增加一个类型名，而没有创造新的类型。</li>
+<li>当在不同源文件中用到同一类型数据（尤其是像数组、指针、结构体、共用体等类型数据）时，常用 typedef 声明一些数据类型，把它们单独放在一个头文件中，然后在需要用到它们的文件中用 ＃include 命令把它们包含进来，以提高编程效率。</li>
+<li>使用 typedef 有利于程序的通用与移植。有时程序会依赖于硬件特性，用 typedef 便于移植。</li>
+</ul>
+<p>当然，也可以使用 <strong>using</strong>：</p>
+<pre><code class="language-cpp">using Int=int;
+</code></pre>
+<p>可以看到，第二种可读性更高。</p>
+<p>另外，using 在模板环境中会更加强大。</p>
+<h2 id="13-枚举类型">1.3 枚举类型</h2>
+<p>枚举类型(enumeration)是C++中的一种派生数据类型，它是由用户定义的若干枚举常量的集合。</p>
+<p>如果一个变量只有几种可能的值，可以定义为枚举(enumeration)类型。所谓&quot;枚举&quot;是指将变量的值一一列举出来，变量的值只能在列举出来的值的范围内。</p>
+<p>创建枚举，需要使用关键字 <code>enum</code>。枚举类型的一般形式为：</p>
+<pre><code class="language-cpp">enum 枚举名{ 
+     标识符[=整型常数], 
+     标识符[=整型常数], 
+... 
+    标识符[=整型常数]
+} 枚举变量;
+</code></pre>
+<p>如果枚举没有初始化, 即省掉&quot;=整型常数&quot;时, 则从第一个标识符开始。</p>
+<pre><code class="language-cpp">// 变量 c 的类型为 color
+enum color { red, green, blue } c;
+c = blue;  // c 被赋值为 &quot;blue&quot;
+</code></pre>
+<p>默认情况下，第一个名称的值为 0，第二个名称的值为 1，第三个名称的值为 2，以此类推。但是，您也可以给名称赋予一个特殊的值，只需要添加一个初始值即可。</p>
+<pre><code class="language-cpp">// 在下面的枚举中，green 的值为 5
+enum color { red, green=5, blue };
+</code></pre>
+<p>在这里，<strong>blue</strong> 的值为 6，因为默认情况下，每个名称都会比它前面一个名称大 1，但 red 的值依然为 0。</p>
+<h2 id="14-类型转换">1.4 类型转换</h2>
+<p>类型转换是将一个数据类型的值转换为另一种数据类型的值。</p>
+<p>变量的类型间是可以互相转换的，转换又分为自动转换和强制转换。</p>
+<p><strong>自动转换规则：</strong></p>
+<ul>
+<li>若参与运算量的类型不同，则先转换成同一类型，然后进行运算。</li>
+<li>转换按数据长度增加的方向进行，以保证精度不降低。如int型和long型运算时，先把int量转成long型后再进行运算。
+<ul>
+<li>若两种类型的字节数不同，转换成字节数高的类型</li>
+<li>若两种类型的字节数相同，且一种有符号，一种无符号，则转换成无符号类型</li>
+</ul>
+</li>
+<li>所有的浮点运算都是以双精度进行的，即使仅含float单精度量运算的表达式，也要先转换成double型，再作运算。</li>
+<li>char型和short型参与运算时，必须先转换成int型。</li>
+<li>在赋值运算中，赋值号两边量的数据类型不同时，赋值号右边量的类型将转换为左边量的类型。如果右边量的数据类型长度比左边长时，将丢失一部分数据，这样会降低精度:</li>
+</ul>
+<pre><code class="language-cpp">int a=1;
+double b=2.5;
+a=b;
+cout &lt;&lt; a; //输出为 2，丢失小数部分
+
+int a = 1;
+double b = 2.1;
+cout &lt;&lt; &quot;a + b = &quot; &lt;&lt; a + b &lt;&lt; endl;  //输出为a + b = 3.1
+</code></pre>
+<p><strong>强制转换规则：</strong></p>
+<p>强制类型转换是通过类型转换运算来实现的。其一般形式为：（类型说明符）（表达式）其功能是把表达式的运算结果强制转换成类型说明符所表示的类型</p>
+<pre><code>int a = 1;
+double b = 2.1;
+cout &lt;&lt; &quot;a + b = &quot; &lt;&lt; a + (int)b &lt;&lt; endl;  //输出为a + b = 3
+</code></pre>
+<p>C++ 中有四种类型转换：静态转换、动态转换、常量转换和重新解释转换。</p>
+<h3 id="141-静态转换static-cast">1.4.1 静态转换（Static Cast）</h3>
+<p>静态转换是将一种数据类型的值<strong>强制转换</strong>为另一种数据类型的值。</p>
+<p>静态转换通常用于比较类型相似的对象之间的转换，例如将 int 类型转换为 float 类型。</p>
+<p>静态转换不进行任何运行时类型检查，因此可能会导致运行时错误。</p>
+<pre><code class="language-cpp">int i = 10;
+float f = static_cast&lt;float&gt;(i); // 静态将int类型转换为float类型
+</code></pre>
+<h3 id="142-动态转换dynamic-cast">1.4.2 动态转换（Dynamic Cast）</h3>
+<p>动态转换通常用于将一个基类指针或引用转换为派生类指针或引用。动态转换在运行时进行类型检查，如果不能进行转换则返回空指针或引发异常。</p>
+<pre><code class="language-cpp">class Base {};
+class Derived : public Base {};
+Base* ptr_base = new Derived;
+Derived* ptr_derived = dynamic_cast&lt;Derived*&gt;(ptr_base); // 将基类指针转换为派生类指针
+</code></pre>
+<h3 id="143-常量转换const-cast">1.4.3 常量转换（Const Cast）</h3>
+<p>常量转换用于将 const 类型的对象转换为非 const 类型的对象。</p>
+<p>常量转换只能用于转换掉 const 属性，不能改变对象的类型。</p>
+<pre><code class="language-cpp">const int i = 10;
+int&amp; r = const_cast&lt;int&amp;&gt;(i); // 常量转换，将const int转换为int
+</code></pre>
+<h3 id="144-重新解释转换reinterpret-cast">1.4.4 重新解释转换（Reinterpret Cast）</h3>
+<p>重新解释转换将一个数据类型的值重新解释为另一个数据类型的值，通常用于在不同的数据类型之间进行转换。</p>
+<p>重新解释转换不进行任何类型检查，因此可能会导致未定义的行为。</p>
+<pre><code class="language-cpp">int i = 10;
+float f = reinterpret_cast&lt;float&amp;&gt;(i); // 重新解释将int类型转换为float类型
+</code></pre>
+<h1 id="2-变量类型">2 变量类型</h1>
+<p>变量的名称可以由字母、数字和下划线字符组成。它必须以字母或下划线开头。大写字母和小写字母是不同的，因为 C++ 是大小写敏感的。</p>
+<h2 id="21-c中的变量定义">2.1 C++中的变量定义</h2>
+<pre><code class="language-cpp">extern int d = 3, f = 5;    // d 和 f 的声明 
+int d = 3, f = 5;           // 定义并初始化 d 和 f
+byte z = 22;                // 定义并初始化 z
+char x = 'x';               // 变量 x 的值为 'x'
+</code></pre>
+<p>不带初始化的定义：带有静态存储持续时间的变量会被隐式初始化为 NULL（所有字节的值都是 0），其他所有变量的初始值是未定义的。</p>
+<h2 id="22-c-中的变量声明">2.2 C++ 中的变量声明</h2>
+<p>变量声明向编译器保证变量以给定的类型和名称存在，这样编译器在不需要知道变量完整细节的情况下也能继续进一步的编译。变量声明只在编译时有它的意义，在程序连接时编译器需要实际的变量声明。</p>
+<p>当您使用多个文件且只在其中一个文件中定义变量时（定义变量的文件在程序连接时是可用的），变量声明就显得非常有用。您可以使用 <strong>extern</strong> 关键字在任何地方声明一个变量。虽然您可以在 C++ 程序中多次声明一个变量，但变量只能在某个文件、函数或代码块中被定义一次。</p>
+<pre><code class="language-cpp">// 函数声明
+int func();
+ 
+int main()
+{
+    // 函数调用
+    int i = func();
+}
+ 
+// 函数定义
+int func()
+{
+    return 0;
+}
+</code></pre>
+<h2 id="23-左值lvalues和右值rvalues">2.3 左值（Lvalues）和右值（Rvalues）</h2>
+<p>C++ 中有两种类型的表达式：</p>
+<ul>
+<li>**左值（lvalue）：**指向内存位置的表达式被称为左值（lvalue）表达式。左值可以出现在赋值号的左边或右边。</li>
+<li>**右值（rvalue）：**术语右值（rvalue）指的是存储在内存中某些地址的数值。右值是不能对其进行赋值的表达式，也就是说，右值可以出现在赋值号的右边，但不能出现在赋值号的左边。</li>
+</ul>
+<p>变量是左值，因此可以出现在赋值号的左边。数值型的字面值是右值，因此不能被赋值，不能出现在赋值号的左边。下面是一个有效的语句：</p>
+<pre><code class="language-cpp">int g = 20;
+</code></pre>
+<p>但是下面这个就不是一个有效的语句，会生成编译时错误：</p>
+<pre><code class="language-cpp">10 = 20;
+</code></pre>
+<h1 id="3-变量作用域">3 变量作用域</h1>
+<p>一般来说有三个地方可以定义变量：</p>
+<ul>
+<li>在函数或一个代码块内部声明的变量，称为<strong>局部变量</strong>。</li>
+<li>在函数参数的定义中声明的变量，称为<strong>形式参数</strong>。</li>
+<li>在所有函数外部声明的变量，称为<strong>全局变量</strong>。</li>
+</ul>
+<p>作用域是程序的一个区域，变量的作用域可以分为以下几种：</p>
+<ul>
+<li><strong>局部作用域</strong>：在函数内部声明的变量具有局部作用域，它们只能在函数内部访问。局部变量在函数每次被调用时被创建，在函数执行完后被销毁。</li>
+<li><strong>全局作用域</strong>：在所有函数和代码块之外声明的变量具有全局作用域，它们可以被程序中的任何函数访问。全局变量在程序开始时被创建，在程序结束时被销毁。</li>
+<li><strong>块作用域</strong>：在代码块内部声明的变量具有块作用域，它们只能在代码块内部访问。块作用域变量在代码块每次被执行时被创建，在代码块执行完后被销毁。</li>
+<li><strong>类作用域</strong>：在类内部声明的变量具有类作用域，它们可以被类的所有成员函数访问。类作用域变量的生命周期与类的生命周期相同。</li>
+</ul>
+<blockquote>
+<p>**注意：**如果在内部作用域中声明的变量与外部作用域中的变量同名，则内部作用域中的变量将覆盖外部作用域中的变量。</p>
+</blockquote>
+<h2 id="31-局部变量">3.1 局部变量</h2>
+<p>在函数或一个代码块内部声明的变量，称为局部变量。它们只能被函数内部或者代码块内部的语句使用。下面的实例使用了局部变量：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+ 
+int main ()
+{
+  // 局部变量声明
+  int a, b;
+  int c;
+ 
+  // 实际初始化
+  a = 10;
+  b = 20;
+  c = a + b;
+ 
+  cout &lt;&lt; c;
+ 
+  return 0;
+}
+</code></pre>
+<h2 id="32-全局变量">3.2 全局变量</h2>
+<p>在所有函数外部定义的变量（通常是在程序的头部），称为全局变量。全局变量的值在程序的整个生命周期内都是有效的。</p>
+<p>全局变量可以被任何函数访问。也就是说，全局变量一旦声明，在整个程序中都是可用的。下面的实例使用了全局变量和局部变量：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+ 
+// 全局变量声明
+int g;
+ 
+int main ()
+{
+  // 局部变量声明
+  int a, b;
+ 
+  // 实际初始化
+  a = 10;
+  b = 20;
+  g = a + b;
+ 
+  cout &lt;&lt; g;
+ 
+  return 0;
+}
+</code></pre>
+<h2 id="33-块作用域">3.3 块作用域</h2>
+<p>块作用域指的是在代码块内部声明的变量：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+  int a = 10;
+  {
+    int a = 20; // 块作用域变量
+    std::cout &lt;&lt; &quot;块变量: &quot; &lt;&lt; a &lt;&lt; std::endl;
+  }
+  std::cout &lt;&lt; &quot;外部变量: &quot; &lt;&lt; a &lt;&lt; std::endl;
+  return 0;
+}
+</code></pre>
+<p>以上实例中，内部的代码块中声明了一个名为 a 的变量，它与外部作用域中的变量 a 同名。内部作用域中的变量 a 将覆盖外部作用域中的变量 a，在内部作用域中访问 a 时输出的是20，而在外部作用域中访问 a 时输出的是 10。</p>
+<p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<pre><code>块变量: 20
+外部变量: 10
+</code></pre>
+<h2 id="34-类作用域">3.4 类作用域</h2>
+<p>类作用域指的是在类内部声明的变量：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+class MyClass {
+public:
+    static int class_var;  // 类作用域变量
+};
+
+int MyClass::class_var = 30;
+
+int main() {
+    std::cout &lt;&lt; &quot;类变量: &quot; &lt;&lt; MyClass::class_var &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+<p>以上实例中，MyClass 类中声明了一个名为 class_var 的类作用域变量。可以使用类名和作用域解析运算符 <code>::</code> 来访问这个变量。在 main() 函数中访问 class_var 时输出的是 30。</p>
+<pre><code>类变量: 30
+</code></pre>
+<h1 id="4-常量">4 常量</h1>
+<h2 id="41-字符常量">4.1 字符常量</h2>
+<p>字符常量是括在单引号中。如果常量以 L（仅当大写时）开头，则表示它是一个宽字符常量（例如 L'x'），此时它必须存储在 <strong>wchar_t</strong> 类型的变量中。否则，它就是一个窄字符常量（例如 'x'），此时它可以存储在 <strong>char</strong> 类型的简单变量中。</p>
+<p>字符常量可以是一个普通的字符（例如 'x'）、一个转义序列（例如 '\t'），或一个通用的字符（例如 '\u02C0'）。</p>
+<p>在 C++ 中，有一些特定的字符，当它们前面有反斜杠时，它们就具有特殊的含义，被用来表示如换行符（\n）或制表符（\t）等。下表列出了一些这样的转义序列码：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">转义序列</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\</td>
+<td style="text-align:left">\ 字符</td>
+</tr>
+<tr>
+<td style="text-align:left">'</td>
+<td style="text-align:left">' 字符</td>
+</tr>
+<tr>
+<td style="text-align:left">&quot;</td>
+<td style="text-align:left">&quot; 字符</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">? 字符</td>
+</tr>
+<tr>
+<td style="text-align:left">\a</td>
+<td style="text-align:left">警报铃声</td>
+</tr>
+<tr>
+<td style="text-align:left">\b</td>
+<td style="text-align:left">退格键</td>
+</tr>
+<tr>
+<td style="text-align:left">\f</td>
+<td style="text-align:left">换页符</td>
+</tr>
+<tr>
+<td style="text-align:left">\n</td>
+<td style="text-align:left">换行符</td>
+</tr>
+<tr>
+<td style="text-align:left">\r</td>
+<td style="text-align:left">回车</td>
+</tr>
+<tr>
+<td style="text-align:left">\t</td>
+<td style="text-align:left">水平制表符</td>
+</tr>
+<tr>
+<td style="text-align:left">\v</td>
+<td style="text-align:left">垂直制表符</td>
+</tr>
+<tr>
+<td style="text-align:left">\ooo</td>
+<td style="text-align:left">一到三位的八进制数</td>
+</tr>
+<tr>
+<td style="text-align:left">\xhh . . .</td>
+<td style="text-align:left">一个或多个数字的十六进制数</td>
+</tr>
+</tbody>
+</table>
+<p>下面的实例显示了一些转义序列字符：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt; 
+using namespace std;  
+int main() 
+{   
+    cout &lt;&lt; &quot;Hello\tWorld\n\n&quot;;
+    return 0; 
+}
+</code></pre>
+<p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<pre><code>Hello   World
+</code></pre>
+<h2 id="42-字符串常量">4.2 字符串常量</h2>
+<p>字符串字面值或常量是括在双引号 <strong>&quot;&quot;</strong> 中的。一个字符串包含类似于字符常量的字符：普通的字符、转义序列和通用的字符。</p>
+<p>您可以使用 *<em>*</em> 做分隔符，把一个很长的字符串常量进行分行。</p>
+<p>下面的实例显示了一些字符串常量：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string greeting = &quot;hello, runoob&quot;;
+    cout &lt;&lt; greeting;
+    cout &lt;&lt; &quot;\n&quot;;     // 换行符
+    string greeting2 = &quot;hello, \
+                       runoob&quot;;
+    cout &lt;&lt; greeting2;
+    return 0;
+}
+</code></pre>
+<!-- more -->
+<!-- more -->
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://huhq12.github.io/tag/rInDp2NRp/" class="tag">
+                    C++
+                  </a>
+                
+              </div>
+            
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

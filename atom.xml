@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://huhq12.github.io/</id>
+    <title>hhq&apos;s note</title>
+    <updated>2023-05-30T07:32:24.392Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://huhq12.github.io/"/>
+    <link rel="self" href="https://huhq12.github.io/atom.xml"/>
+    <logo>https://huhq12.github.io/images/avatar.png</logo>
+    <icon>https://huhq12.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, hhq&apos;s note</rights>
+    <entry>
+        <title type="html"><![CDATA[基础]]></title>
+        <id>https://huhq12.github.io/post/ji-chu/</id>
+        <link href="https://huhq12.github.io/post/ji-chu/">
+        </link>
+        <updated>2023-05-30T05:17:27.000Z</updated>
+        <summary type="html"><![CDATA[<p>1234</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>1234</p>
+]]></content>
+    </entry>
+</feed>
